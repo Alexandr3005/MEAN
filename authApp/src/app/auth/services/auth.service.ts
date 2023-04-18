@@ -44,6 +44,29 @@ export class AuthService {
   }
 
 
+ // prueba get
+/*
+  getUserInfo(): Observable<any> {
+    const url = `${this.baseUrl}/user`;
+
+    return this.http.get<any>(url)
+      .pipe(
+        tap(resp => {
+          if (resp.ok) {
+            const usuario = {
+              name: resp.name!,
+              uid: resp.uid!,
+              email: resp.email!
+            };
+            localStorage.setItem('usuario', JSON.stringify(usuario));
+          }
+        }),
+        catchError(err => of(err.error.msg))
+      );
+  }
+
+*/
+
   registro(name: string, email: string, password: string) {
 
     const url = `${this.baseUrl}/auth/new`;
